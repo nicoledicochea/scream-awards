@@ -11,6 +11,8 @@
 
 I'm a Scream fanatic so this Web App is unofficial promo for the 6th movie that premieres March 10th.
 
+Disclaimer: I do not own the Scream franchise. I am simply a fan.
+
 ## About The Film
 
 If you aren't familiar with the series, see below for a quick synposis:
