@@ -12,7 +12,7 @@ const movieRoutes = require("./routes/movie");
 
 
 //Use .env file in config folder
-require("dotenv").config({ path: "./config/.env" });
+require("dotenv").config({ path: "./.env" });
 
 
 //Connect To Database
