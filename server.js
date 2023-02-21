@@ -52,6 +52,7 @@ app.use("/", mainRoutes);
 app.use("/movie", movieRoutes);
 
 //Server Running
-app.listen(process.env.PORT, () => {
+const PORT = 2121
+app.listen(process.env.PORT || PORT, () => {
   console.log("Server is running, you better catch it!");
 });
