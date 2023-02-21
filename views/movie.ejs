@@ -1,0 +1,53 @@
+<%- include('partials/header') -%>
+
+
+
+
+<section class="mx-auto mt-20 mb-16 w-full max-w-lg p-4 rounded-xl sm:p-6 text-center">
+
+    <h1 class="title-font text-5xl md:text-7xl mb-4 mt-6 font-medium text-white uppercase text-center">Congrats</h1>
+        <h2 class="title-font text-3xl md:text-5xl mt-6 mb-16 font-medium text-white uppercase">You 
+            <a class="italic underline underline-offset-8 hover:text-rose-700" href="https://www.youtube.com/watch?v=zembfSIPoiI">
+                <span class="sr-only">Link to Youtube Video</span>
+                Survive
+            <a>
+
+        </h1>
+
+    <h5 class="mb-3 text-base font-semibold md:text-xl text-white text-center">
+        THE LIST
+    </h5>
+    <p class="text-sm font-normal text-gray-400 text-justify">When it comes to horror movies, everyone has their own preferences. But, there's only one correct answer. The "Scream" movie series, created by Wes Craven, is a modern classic in the horror genre.</p>
+    
+    <div class="grid grid-cols-2 items-center pt-10 px-10 uppercase border-b text-gray-500 text-center items-center justify-center tracking-widest text-[8px]">
+        <div class="mb-2 mr-12">Votes</div>
+        <div class="mb-2">Movie Title</div>
+    </div>
+    <ul>
+        <% for(var i=0; i<movies.length; i++) {%>
+            <li>
+                <div class="grid grid-cols-2 items-center p-10 text-base font-bold border-b hover:bg-zinc-800 text-white justify-center">
+                        
+                    <!-- add form to update the votes straight from the list -->
+                    <!-- create another 'wrong answer' ejs, for if SCREAM is not chosen as an answer -->
+                    <form action="/movie/updateVote/<%= movies[i].id%>?_method=PUT" method="POST">
+                        <button type="submit" class="items-center justify-center px-8 py-6 ml-3 mr-10 text-sm font-medium bg-zinc-700 text-gray-200 uppercase tracking-wide hover:bg-zinc-600 active:bg-zinc-500">
+                            <%= movies[i].likes%> Votes
+                        </button>
+                    </form>
+
+                    <span class="whitespace-wrap text-xl text-center font-normal capitalize tracking-wide">
+                        <%= movies[i].movieTitle%>
+                    </span>
+
+                </div>
+            </li>
+        <% } %>
+    </ul>
+    <div class="text-center mt-6"><a href="/" class="text-sm text-gray-500 mb-0 w-full hover:text-gray-400">Choose again?</a></div >
+</section>
+
+
+  
+
+<%- include('partials/footer') -%>
