@@ -1,11 +1,12 @@
 ## The Scream Awards
 
 <p align="center">
-<img alt="Screenshot of The Scream Awards Homepage" width="650" src="https://user-images.githubusercontent.com/111663583/220468838-681383ea-f064-4efd-b892-bf41d8e423aa.png"></img>
+<img alt="Screenshot of The Scream Awards Homepage" width="650" src="https://user-images.githubusercontent.com/111663583/221277080-8b161467-caae-4d5a-af2c-7c31bcc25794.gif"></img>
 </p>
 
 
-**Link to project:** Coming Soon
+
+**Link to project:** [Scream Awards](https://screamawards.cyclic.app/)
 
 ## About The Project
 
