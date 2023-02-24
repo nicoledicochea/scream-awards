@@ -37,7 +37,7 @@ There are five properties in the Movie controller.
 
 - addFave uses findOneAndUpdate. If a user inputs a movie that is already in the database, the like count will increase by 1. However, if a movie doesn't exist, 'upsert: true' dictates that the new movie will be added to the database with  movieTitle and likes = 1. Depending on the user input, the server will redirect to either '/movie' or 'movie/wrong'.
 - getMovies and getRanking use find and sort to serve movie.ejs and ranking.ejs (respectively) with all movie documents sorted in descending order. getMovies differs as it contains additional text for users who chose the 'correct' film when voting.
-- getWrong serves up wrong.ejs.
+- getWrong serves up rendered wrong.ejs.
 - updateVote uses findOneAndUpdate to increase a film's likes by 1.
 
 As for the design, I stuck with dark colors to fit the theme of horror.
