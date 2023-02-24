@@ -10,7 +10,7 @@
 
 I'm a Scream fanatic so this web application is unofficial promo for the 6th movie that premieres March 10th.
 
-The app asks the question, what's your favorite scary movie? Users input their choice. Depending on the answer, a user will be directed to a certain page. So, do *you* have what it takes to survive?
+The app asks the question, *what's your favorite scary movie?* A user's answer determines whether Ghostface lets them live or die. Do *you* have what it takes to survive?
 
 **Disclaimer:** I do not own the Scream franchise. I am simply a fan.
 
@@ -36,7 +36,7 @@ I created a Movie schema. This contained all the information that would go into 
 There are five properties in the Movie controller. 
 
 - addFave uses findOneAndUpdate. If a user inputs a movie that is already in the database, the like count will increase by 1. However, if a movie doesn't exist, 'upsert: true' dictates that the new movie will be added to the database with  movieTitle and likes = 1. Depending on the user input, the server will redirect to either '/movie' or 'movie/wrong'.
-- getMovies and getRanking use find and sort to serve movie.ejs and ranking.ejs (respectively) with all movie documents sorted in descending order. getMovies differs as it contains additional text for users who chose the 'correct' film when voting.
+- getMovies and getRanking use find and sort to serve movie.ejs and ranking.ejs (respectively) with all movie documents sorted in descending order. getMovies differs as it contains additional text for users who chose the 'correct' film when voting. The only 'correct' answers are any of the Scream installements: 1 - 5. I will add the 6th one as an option once the film is released.
 - getWrong serves up rendered wrong.ejs.
 - updateVote uses findOneAndUpdate to increase a film's likes by 1.
 
