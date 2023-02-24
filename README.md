@@ -1,6 +1,6 @@
 ## The Scream Awards
 ### Ghostface: What's your favorite scary movie?
-**Link to project:** [Scream Awards](https://screamawards.cyclic.app/)
+**Link to project:** [The Scream Awards](https://screamawards.cyclic.app/)
 
 <p align="center">
 <img alt="Screenshot of The Scream Awards Homepage" width="650" src="https://user-images.githubusercontent.com/111663583/221277080-8b161467-caae-4d5a-af2c-7c31bcc25794.gif"></img>
