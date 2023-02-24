@@ -16,7 +16,7 @@ require("dotenv").config({ path: "./config/.env" });
 
 
 //Connect To Database
-connectDB();
+// connectDB();
 
 //Using EJS for views
 app.set("view engine", "ejs");
@@ -52,7 +52,10 @@ app.use("/", mainRoutes);
 app.use("/movie", movieRoutes);
 
 //Server Running
+//Connect to the database before listening
 const PORT = 2121
-app.listen(process.env.PORT || PORT, () => {
-  console.log("Server is running, you better catch it!");
-});
+connectDB().then(() => {
+  app.listen(process.env.PORT || PORT, () => {
+    console.log("Server is running, you better catch it!");
+  });
+})
