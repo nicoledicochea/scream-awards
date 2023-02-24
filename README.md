@@ -31,7 +31,15 @@ The "Scream" movie series, created by Wes Craven, is a modern classic in the hor
 
 ## Optimizations
 
-I still need to deploy the app. 
+I want to implement the Fetch API to receive data from [IMDB](https://developer.imdb.com/). This way I can add images of movie posters to the Movie Ranking list. 
+
+I need to figure out how to deal with incorrect user input. For example, if someone types 'Scraem 5' rather than 'Scream 5' that will mess with the count. The only way to fix that would be to manually enter the database, delete the misspelled document, and update the count for the correctly spelled film. There is also the issue of if someone were to type in 'Scream Five' or 'Scream V' rather than 'Scream 5'. I need to account for other spellings.
+
+Currently, I link to YouTube videos. I *could* also embed them on the page, but I first want to see how that affects the design of the pages.
+
+## Lessons Learned
+
+I was having issues with deployment on Cyclic. I kept getting the following error: mongooseerror: the `uri` parameter to `openuri()` must be a string, got "undefined". make sure the first parameter to `mongoose.connect()` or `mongoose.createconnection()` is a string. However, the first parameter of mongoose.connect() *was* a string. After comparison to my other launched project, LumiLab, which is also deployed on Cyclic and did *not* give me that error, I was finally able to find the problem. I had an extra script in package.json 'build: node server.js' that must've been interfering with this, as deleting that caused the app to deploy.  
 
 ## Examples:
 
