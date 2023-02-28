@@ -20,7 +20,8 @@ module.exports = {
         movieTitle === 'scream 2' ||
         movieTitle === 'scream 3' ||
         movieTitle === 'scream 4' ||
-        movieTitle === 'scream 5') {
+        movieTitle === 'scream 5' ||
+        movieTitle === 'scream 6') {
         res.redirect(`/movie`)
       } else {
         res.redirect(`/movie/wrong`)
@@ -103,7 +104,13 @@ module.exports = {
         );
         console.log("Vote count updated");
         
-        if(req.params.id === '63f3eca65eef6044c8dd79df') {
+        if(req.params.id === '63f3eca65eef6044c8dd79df' ||
+        req.params.id === '63fd5bb956275c2d100fae2e' ||
+        req.params.id === '63f40038ec8a0c3ccc7a2097' ||
+        req.params.id === '63f4036b7e4eaf1d08ace340' ||
+        req.params.id === '63f5329c8691c63e781c8814' ||
+        req.params.id === '63f532928691c63e781c8811'
+        ) {
           res.redirect(`/movie`)
         } else {
           res.redirect(`/movie/wrong`)
