@@ -17,6 +17,30 @@ const MovieSchema = new mongoose.Schema({
       type: String,
       required: false,
     },
+    released: {
+      type: String,
+      required: false,
+    },
+    director: {
+      type: String,
+      required: false,
+    },
+    writer: {
+      type: String,
+      required: false,
+    },
+    actors: {
+      type: String,
+      required: false,
+    },
+    awards: {
+      type: String,
+      required: false,
+    },
+    language: {
+      type: String,
+      required: false,
+    },
   });
   
   module.exports = mongoose.model("Movie", MovieSchema);

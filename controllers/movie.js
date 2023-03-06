@@ -9,15 +9,19 @@ module.exports = {
       const fetch = await import('node-fetch');
       const response = await fetch.default(`https://www.omdbapi.com/?t=${urlMovie}&apikey=b93a8d4e`);
       const data = await response.json();
-      const poster = data.Poster
-      const plot = data.Plot
       // console.log('data.Poster:', poster);
   
       const movie = new Movie({
         movieTitle: movieTitle,
         likes: 1,
-        poster: poster,
-        plot: plot
+        poster: data.Poster,
+        plot: data.Plot,
+        released: data.Released,
+        director: data.Director,
+        writer: data.Writer,
+        actors: data.Actors,
+        awards: data.Awards,
+        language: data.Language
       });
   
       await movie.save();
