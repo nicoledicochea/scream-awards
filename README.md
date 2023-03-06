@@ -44,7 +44,7 @@ As for the design, I stuck with dark colors to fit the theme of horror.
 
 ## Optimizations
 
-I want to implement the Fetch API to receive data from [IMDB](https://developer.imdb.com/). This way I can add images of movie posters to the Movie Ranking list. 
+I want to implement the Fetch API to receive data from [The Open Movie Database](http://www.omdbapi.com/). This way I can add images of movie posters to the Movie Ranking list.  
 
 I need to figure out how to deal with incorrect user input. For example, if someone types 'Scraem 5' rather than 'Scream 5' that will mess with the count. The only way to fix that would be to manually enter the database, delete the misspelled document, and update the count for the correctly spelled film. There is also the issue of if someone were to type in 'Scream Five' or 'Scream V' rather than 'Scream 5'. I need to account for other spellings.
 
