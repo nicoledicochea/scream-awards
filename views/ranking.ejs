@@ -16,31 +16,65 @@
     </div>
     <ul>
         <% for(var i=0; i<movies.length; i++) {%>
-            <!-- below image would be variable from model -->
+
             
-            <li>
-                
-                <div class="grid grid-cols-2 items-center p-10 text-base font-bold border-b hover:bg-zinc-800 text-white justify-items-center mx-auto">
+            <article class="grid grid-cols-2 items-center p-6 text-base font-bold border-b hover:bg-zinc-800 text-white justify-center">
 
-                    <div>
-                        <img src="<%= movies[i].poster%>" alt="<%= movies[i].movieTitle%> movie poster" class="pb-2">
-                        <span class="whitespace-wrap text-xl text-center font-normal capitalize tracking-wide">
-                            <%= movies[i].movieTitle%>
-                        </span>
-                    </div>
-                        
-                    <!-- add form to update the votes straight from the list -->
-                    <!-- create another 'wrong answer' ejs, for if SCREAM is not chosen as an answer -->
-                    <form action="/movie/updateVote/<%= movies[i].id%>?_method=PUT" method="POST">
-                        <button type="submit" class="px-8 py-6 text-sm font-medium bg-zinc-700 text-gray-200 uppercase tracking-wide hover:bg-zinc-600 active:bg-zinc-500">
-                            <%= movies[i].likes%> Votes
-                        </button>
-                    </form>
-
-                    
-
+    
+               <div>
+                <img src="<%= movies[i].poster%>" alt="<%= movies[i].movieTitle%> movie poster" class="w-full"> 
+               
                 </div>
-            </li>
+    
+                <div>
+                    
+                    <h3 class="text-xl font-medium sm:text-2xl capitalize">
+                        <%= movies[i].movieTitle%>
+                    </h3>
+              
+                    <p class="text-[12px] text-gray-50 text-justify py-4 pl-4 font-normal">
+                        <%= movies[i].plot%>
+                    </p>
+    
+                    <div class="text-[9px] text-gray-50 font-normal text-left pl-4 grid grid-cols-2">
+                        
+    
+                        <p class="justify-self-end pr-2">
+                            <span class="uppercase font-bold tracking-wide">
+                                Released
+                            </span>
+                        </p>
+                        <span class="pl-2"><%= movies[i].released%></span>
+    
+                        <p class="justify-self-end pr-2">
+                            <span class="uppercase font-bold tracking-wide">
+                                Director
+                            </span>
+                        </p>
+                        <span class="pl-2"><%= movies[i].director%></span>
+    
+                        <p class="justify-self-end pr-2">
+                            <span class="uppercase font-bold tracking-wide">
+                                Actors
+                            </span>
+                        </p>
+                        <span class="pl-2"><%= movies[i].actors%></span>
+
+                    </div>
+    
+               </div>
+    
+               <div class="col-span-2">
+                <form action="/movie/updateVote/<%= movies[i].id%>?_method=PUT" method="POST">
+                    <button
+                        class="rounded bg-rose-700 px-10 py-2 text-[10px] font-medium text-white mt-6 w-full uppercase"
+                    >
+                    <%= movies[i].likes%> Votes
+                    </button>
+                </form>
+               </div>
+               
+            </article>
         <% } %>
     </ul>
     <div class="text-center mt-6"><a href="/" class="text-sm text-gray-500 mb-0 w-full hover:text-gray-400">Click here to vote.</a></div >
