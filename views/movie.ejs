@@ -20,70 +20,13 @@
     <p class="text-sm font-normal text-gray-400 text-justify">When it comes to horror movies, everyone has their own preferences. But, there's only one correct best film. The "Scream" movie series, created by Wes Craven, is a modern classic in the horror genre.</p>
     
     <div class="grid grid-cols-2 items-center pt-10 px-10 uppercase border-b text-gray-500 text-center items-center justify-center tracking-widest text-[8px]">
-        <!-- <div class="mb-2 mr-12">Votes</div>
-        <div class="mb-2">Movie Title</div> -->
+
     </div>
     <% for(var i=0; i<movies.length; i++) {%>
 
-        <!-- <article class="rounded-xl bg-white p-4 ring ring-indigo-50 sm:p-6 lg:p-8">
-            <div class="grid grid-cols-2 items-start sm:gap-8">
-             
-                <img src="<%= movies[i].poster%>" alt="<%= movies[i].movieTitle%> movie poster"> 
-          
-              <div>
-                <button
-                  class="rounded border border-indigo-500 bg-indigo-500 px-3 py-1.5 text-[10px] font-medium text-white"
-                >
-                    <%= movies[i].likes%> Votes
-                </button>
-          
-                <h3 class="mt-4 text-lg font-medium sm:text-xl capitalize">
-                    <%= movies[i].movieTitle%>
-                </h3>
-          
-                <p class="mt-1 text-sm text-gray-700 text-justify">
-                    <%= movies[i].plot%>
-                </p>
-          
-                <div class="mt-4 sm:flex sm:items-center sm:gap-2">
-                  <div class="flex items-center gap-1 text-gray-500">
-                    <svg
-                      class="h-4 w-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                      ></path>
-                    </svg>
-          
-                    <p class="text-xs font-medium">48:32 minutes</p>
-                  </div>
-          
-                  <span class="hidden sm:block" aria-hidden="true">&middot;</span>
-          
-                  <p class="mt-2 text-xs font-medium text-gray-500 sm:mt-0">
-                    Featuring <a href="#" class="underline hover:text-gray-700">Barry</a>,
-                    <a href="#" class="underline hover:text-gray-700">Sandra</a> and
-                    <a href="#" class="underline hover:text-gray-700">August</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </article> -->
           
         <article class="grid grid-cols-2 items-center p-6 text-base font-bold border-b hover:bg-zinc-800 text-white justify-center">
            
-            <!-- <div class="col-span-2">
-                <h3 class="text-xl font-medium sm:text-2xl capitalize pb-6">
-                    <%= movies[i].movieTitle%>
-                </h3>
-               </div> -->
            
 
            <div>
@@ -124,14 +67,7 @@
                         </span>
                     </p>
                     <span class="pl-2"><%= movies[i].actors%></span>
-<!-- 
-                    <p class="justify-self-end pr-2">
-                        <span class="uppercase font-bold tracking-wide">
-                            Awards
-                        </span>
-                    </p>
-                    <span class="pl-2"><%= movies[i].awards%></span> -->
-                    
+
                 </div>
 
            </div>
@@ -139,7 +75,7 @@
            <div class="col-span-2">
             <form action="/movie/updateVote/<%= movies[i].id%>?_method=PUT" method="POST">
                 <button
-                    class="rounded bg-rose-700 px-10 py-2 text-[10px] font-medium text-white mt-6 w-full uppercase"
+                    class="rounded bg-rose-700 px-10 py-2 text-[10px] font-medium text-white mt-6 w-full uppercase focus:outline-none hover:bg-rose-600 active:bg-rose-700"
                 >
                 <%= movies[i].likes%> Votes
                 </button>

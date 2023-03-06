@@ -21,12 +21,12 @@
     <img class="lg:w-2/6 md:w-3/6 w-5/6 object-cover object-center rounded" alt="hero" src="/imgs/heroimage.png">
     <div class="w-full lg:w-2/3 flex flex-col mb-16 items-center text-center">
       <h1 class="title-font sm:text-5xl text-4xl mb-4 mt-6 font-medium text-white uppercase">What's your favorite <span class="italic">scary</span > movie?</h1>
-      <form action="/movie/addFave?_method=PUT" method="POST" class="flex w-full justify-center items-end">
+      <form action="/movie/addFave?_method=PUT" method="POST" class="flex w-full justify-center items-end" id="movieForm">
         <div class="relative mr-4 lg:w-full xl:w-1/2 w-3/4 md:w-full text-left">
           <label for="movieTitle" class="leading-7 text-sm text-gray-400">Answer</label>
           <input type="text" id="movieTitle" name="movieTitle" class="w-full bg-zinc-800 rounded border bg-opacity-40 border-gray-700 focus:ring-2 focus:ring-rose-900 focus:bg-transparent focus:border-rose-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
         </div>
-        <button class="text-white bg-rose-700 border-0 py-2.5 px-6 focus:outline-none hover:bg-rose-600 rounded text-sm uppercase tracking-wide active:bg-rose-800">Submit</button>
+        <button class="text-white bg-rose-700 border-0 py-2.5 px-6 focus:outline-none hover:bg-rose-600 rounded text-sm uppercase tracking-wide active:bg-rose-700">Submit</button>
       </form>
       <p class="text-sm mt-6 text-gray-500 mb-8 w-full">Answer like your life depends on it.</p>
       
