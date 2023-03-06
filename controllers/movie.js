@@ -2,35 +2,79 @@ const Movie = require("../models/Movie");
 
 module.exports = {
 
-  addFave: async (req, res) => {
+  addFave: async (req, res, next) => {
     try {
-        const movieTitle = req.body.movieTitle.toLowerCase()
-          await Movie.findOneAndUpdate(
-          { movieTitle: movieTitle },
-          {
-              $inc: { likes: 1 },
-          },
-          {
-            upsert: true,
-            setDefaultsOnInsert: true,
-          }
-      )
-      console.log("Likes +1");
-      if(movieTitle === 'scream' ||
+      const movieTitle = req.body.movieTitle.toLowerCase();
+      const urlMovie = movieTitle.split(' ').join('+');
+      const fetch = await import('node-fetch');
+      const response = await fetch.default(`https://www.omdbapi.com/?t=${urlMovie}&apikey=b93a8d4e`);
+      const data = await response.json();
+      const poster = data.Poster
+      const plot = data.Plot
+      // console.log('data.Poster:', poster);
+  
+      const movie = new Movie({
+        movieTitle: movieTitle,
+        likes: 1,
+        poster: poster,
+        plot: plot
+      });
+  
+      await movie.save();
+  
+      console.log(movieTitle, 'Likes +1');
+      if (movieTitle === 'scream' ||
         movieTitle === 'scream 2' ||
         movieTitle === 'scream 3' ||
         movieTitle === 'scream 4' ||
         movieTitle === 'scream 5' ||
         movieTitle === 'scream 6') {
-        res.redirect(`/movie`)
+        res.redirect(`/movie`);
       } else {
-        res.redirect(`/movie/wrong`)
+        res.redirect(`/movie/wrong`);
       }
-      
-  }  catch (err) {
-      console.log(err);
+    } catch (err) {
+      console.error(err);
+      next(err);
     }
-  }, 
+  },
+
+  // addFave: async (req, res) => {
+  //   try {
+  //       const movieTitle = req.body.movieTitle.toLowerCase()
+  //       const urlMovie = movieTitle.split(' ').join('+')
+  //       const fetch = await import('node-fetch');
+  //       const response = await fetch.default(`https://www.omdbapi.com/?t=${urlMovie}&apikey=b93a8d4e`)
+  //       const data = await response.json();
+  //       res.json(data)
+  //       console.log(data.poster)
+  //         await Movie.findOneAndUpdate(
+  //         { movieTitle: movieTitle },
+  //         {
+  //             $inc: { likes: 1 },
+  //             $set: { poster: data.poster }
+  //         },
+  //         {
+  //           upsert: true,
+  //           setDefaultsOnInsert: true,
+  //         }
+  //     )
+  //     console.log(movieTitle,"Likes +1");
+  //     if(movieTitle === 'scream' ||
+  //       movieTitle === 'scream 2' ||
+  //       movieTitle === 'scream 3' ||
+  //       movieTitle === 'scream 4' ||
+  //       movieTitle === 'scream 5' ||
+  //       movieTitle === 'scream 6') {
+  //       res.redirect(`/movie`)
+  //     } else {
+  //       res.redirect(`/movie/wrong`)
+  //     }
+      
+  // }  catch (err) {
+  //     console.log(err);
+  //   }
+  // }, 
 
   // addFave: async (req, res) => {
   //     try {

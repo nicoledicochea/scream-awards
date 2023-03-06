@@ -8,7 +8,15 @@ const MovieSchema = new mongoose.Schema({
     likes: {
       type: Number,
       required: true,
-    }
+    },
+    poster: {
+      type: String,
+      required: false,
+    },
+    plot: {
+      type: String,
+      required: false,
+    },
   });
   
   module.exports = mongoose.model("Movie", MovieSchema);

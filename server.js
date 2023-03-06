@@ -10,7 +10,6 @@ const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
 const movieRoutes = require("./routes/movie");
 
-
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
 
