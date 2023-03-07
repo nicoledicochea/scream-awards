@@ -26,25 +26,37 @@
 
           
         <article class="grid grid-cols-2 items-center p-6 text-base font-bold border-b hover:bg-zinc-800 text-white justify-center">
-           
-           
 
-           <div>
-            <img src="<%= movies[i].poster%>" alt="<%= movies[i].movieTitle%> movie poster" class="w-full"> 
+            <div class="col-span-2">
+                <form action="/movie/updateVote/<%= movies[i].id%>?_method=PUT" method="POST">
+                    <button
+                        class="rounded bg-rose-700 px-10 py-2 text-[10px] font-medium text-white mb-6 mt-2 w-full uppercase focus:outline-none hover:bg-rose-600 active:bg-rose-700"
+                    >
+                    <%= movies[i].likes%> Votes
+                    </button>
+                </form>
+               </div>
+           
+           <div class="col-span-2 pb-6">
+            <h3 class="text-xl font-medium sm:text-2xl capitalize">
+                <%= movies[i].movieTitle%>
+            </h3>
+           </div>
+
+           <div class="col-span-2 w-1/2 text-center justify-self-center">
+            <img src="<%= movies[i].poster%>" alt="<%= movies[i].movieTitle%> movie poster"> 
            
             </div>
 
-            <div>
+            <div class="col-span-2 w-3/4 justify-self-center">
                 
-                <h3 class="text-xl font-medium sm:text-2xl capitalize">
-                    <%= movies[i].movieTitle%>
-                </h3>
+                
           
-                <p class="text-[12px] text-gray-50 text-justify py-4 pl-4 font-normal">
+                <p class="text-[12px] text-gray-50 text-justify py-4 font-normal">
                     <%= movies[i].plot%>
                 </p>
 
-                <div class="text-[9px] text-gray-50 font-normal text-left pl-4 grid grid-cols-2">
+                <div class="text-[9px] text-gray-50 font-normal text-left grid grid-cols-2">
                     
 
                     <p class="justify-self-end pr-2">
@@ -68,19 +80,18 @@
                     </p>
                     <span class="pl-2"><%= movies[i].actors%></span>
 
+                    <p class="justify-self-end pr-2">
+                        <span class="uppercase font-bold tracking-wide">
+                            Awards
+                        </span>
+                    </p>
+                    <span class="pl-2"><%= movies[i].awards%></span>
+
                 </div>
 
            </div>
 
-           <div class="col-span-2">
-            <form action="/movie/updateVote/<%= movies[i].id%>?_method=PUT" method="POST">
-                <button
-                    class="rounded bg-rose-700 px-10 py-2 text-[10px] font-medium text-white mt-6 w-full uppercase focus:outline-none hover:bg-rose-600 active:bg-rose-700"
-                >
-                <%= movies[i].likes%> Votes
-                </button>
-            </form>
-           </div>
+           
            
         </article>
           
