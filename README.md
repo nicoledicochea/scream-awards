@@ -8,7 +8,7 @@
 
 ## About
 
-I'm a Scream fanatic so this web application is unofficial promo for the 6th movie that premieres March 10th.
+I'm a Scream fanatic so this web application is unofficial promo for the 6th movie that premiered March 10th.
 
 The app asks the question, *what's your favorite scary movie?* A user's answer determines whether Ghostface lets them live or die. Do *you* have what it takes to survive?
 
