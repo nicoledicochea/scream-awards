@@ -62,4 +62,4 @@ Take a look at some of my recent work.
 
 | [Saving People, Hunting Things, The API Business](https://github.com/nicoledicochea/savingPeople-huntingThings-theApiBusiness) | [LumiLab](https://github.com/nicoledicochea/lumi-lab) |
 |--|--|
-| <p align="center"><img alt="Screenshot of Saving People, Hunting Things, The API Business" width="300" src="https://user-images.githubusercontent.com/111663583/201507344-ad0ea063-1408-4794-ad52-dde4f7f3b189.gif"></img></p> |  <p align="center"><img alt="Screenshot of LumiLab" width="300" src="https://user-images.githubusercontent.com/111663583/218010069-7eb61449-b943-4c96-a258-589ba5f93c21.gif"></img></p> |
+| <p align="center"><img alt="Screenshot of Saving People, Hunting Things, The API Business"  width="100%" src="https://user-images.githubusercontent.com/111663583/201507344-ad0ea063-1408-4794-ad52-dde4f7f3b189.gif"></img></p> |  <p align="center"><img alt="Screenshot of LumiLab"  width="100%" src="https://user-images.githubusercontent.com/111663583/218010069-7eb61449-b943-4c96-a258-589ba5f93c21.gif"></img></p> |
